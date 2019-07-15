@@ -1,0 +1,31 @@
+version: '2.1'
+services:
+  perkbox-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    expose:
+      - 80
+    ports:
+      - 8080:80
+    environment:
+      DSN_DB: perkbox_user:perkbox_user_password@tcp(192.168.160.1:3366)/perkbox
+      SQL_MIGRATIONS_DIR: ./migrations
+    depends_on:
+      mysqlDB:
+        condition: service_healthy
+  mysqlDB:
+    image: mysql:8.0.16
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: perkbox
+      MYSQL_USER: perkbox_user
+      MYSQL_PASSWORD: perkbox_user_password
+    expose:
+      - 3306
+    ports:
+      - 3366:3306
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 3s
+      retries: 20

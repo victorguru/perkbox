@@ -1,0 +1,174 @@
+{
+	"info": {
+		"_postman_id": "54c038eb-7a00-4e14-b3ae-381fed735b7b",
+		"name": "Perkbox",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Coupon",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{host}}:8080/coupon/create?name=Great discount on Evans Cycles&brand=Evans Cycles&value=100.5&expiry=2020-01-01 23:59:59",
+					"host": [
+						"{{host}}"
+					],
+					"port": "8080",
+					"path": [
+						"coupon",
+						"create"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Great discount on Evans Cycles"
+						},
+						{
+							"key": "brand",
+							"value": "Evans Cycles"
+						},
+						{
+							"key": "value",
+							"value": "100.5"
+						},
+						{
+							"key": "expiry",
+							"value": "2020-01-01 23:59:59"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Coupon",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{host}}:8080/coupon/get/1",
+					"host": [
+						"{{host}}"
+					],
+					"port": "8080",
+					"path": [
+						"coupon",
+						"get",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Coupons",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{host}}:8080/coupon/get/all",
+					"host": [
+						"{{host}}"
+					],
+					"port": "8080",
+					"path": [
+						"coupon",
+						"get",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Limit+Offset Coupons",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{host}}:8080/coupon/get/all?limit=5&offset=5",
+					"host": [
+						"{{host}}"
+					],
+					"port": "8080",
+					"path": [
+						"coupon",
+						"get",
+						"all"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "5"
+						},
+						{
+							"key": "offset",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Updatet Coupon",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{host}}:8080/coupon/update/?id=39name=Great discount on Evans Cycles 2&brand=Giffgaff&value=100.5&expiry=2020-01-01 23:59:59",
+					"host": [
+						"{{host}}"
+					],
+					"port": "8080",
+					"path": [
+						"coupon",
+						"update",
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "39name=Great discount on Evans Cycles 2"
+						},
+						{
+							"key": "brand",
+							"value": "Giffgaff"
+						},
+						{
+							"key": "value",
+							"value": "100.5"
+						},
+						{
+							"key": "expiry",
+							"value": "2020-01-01 23:59:59"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
